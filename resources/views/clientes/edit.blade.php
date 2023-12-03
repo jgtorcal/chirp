@@ -4,9 +4,15 @@
 
             @csrf
             @method('patch')
-            <div class="mb-6">
-                <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre del cliente</label>
-                <input type="text" id="nombre" name="nombre" placeholder="{{ __('Nombre del cliente') }}" value="{{ old('nombre', $cliente->nombre) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <div class="grid gap-6 mb-6 md:grid-cols-2">
+                <div>
+                    <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre del cliente</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="{{ __('Nombre del cliente') }}" value="{{ old('nombre', $cliente->nombre) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email del cliente</label>
+                    <input type="email" id="email" name="email" placeholder="{{ __('Email del cliente') }}" value="{{ old('nombre', $cliente->email) }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                </div>
             </div>
             <div class="grid gap-6 mb-6 md:grid-cols-2">
                 <div>

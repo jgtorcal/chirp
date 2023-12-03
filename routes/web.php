@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,10 @@ Route::resource('chirps', ChirpController::class)
     ->middleware(['auth', 'verified']);
 
 Route::resource('clientes', ClienteController::class)
+    ->only(['index', 'store', 'edit', 'update', 'destroy'])
+    ->middleware('auth');
+
+Route::resource('facturas', FacturaController::class)
     ->only(['index', 'store', 'edit', 'update', 'destroy'])
     ->middleware('auth');
 

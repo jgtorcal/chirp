@@ -37,6 +37,7 @@ class ClienteController extends Controller
             'nombre' => 'required|string|max:255',
             'direccion' => 'required|string|max:255',
             'cif' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
         ]);
 
         $cliente = Cliente::create($validated);
@@ -75,6 +76,7 @@ class ClienteController extends Controller
             'nombre' => 'required|string|max:255',
             'direccion' => 'required|string|max:255',
             'cif' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
         ]);
 
         $cliente->update($validated);

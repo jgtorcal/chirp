@@ -3,9 +3,15 @@
         <form method="POST" action="{{ route('clientes.store') }}">
 
             @csrf
-            <div class="mb-6">
-                <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre del cliente</label>
-                <input type="text" id="nombre" name="nombre" placeholder="{{ __('Nombre del cliente') }}" value="{{ old('nombre') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            <div class="grid gap-6 mb-6 md:grid-cols-2">
+                <div>
+                    <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre del cliente</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="{{ __('Nombre del cliente') }}" value="{{ old('nombre') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email del cliente</label>
+                    <input type="email" id="email" name="email" placeholder="{{ __('Email del cliente') }}" value="{{ old('email') }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                </div>
             </div>
             <div class="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
@@ -45,7 +51,7 @@
                                 <div class="text-left font-semibold">Nombre</div>
                             </th>
                             <th class="p-2">
-                                <div class="text-left font-semibold">Dirección</div>
+                                <div class="text-left font-semibold">Email</div>
                             </th>
                             <th class="p-2">
                                 <div class="text-left font-semibold">CIF / NIF</div>
@@ -63,7 +69,7 @@
                                 <div class="text-left font-medium text-green-500 uppercase">{{ $cliente->nombre }}</div>
                             </td>
                             <td class="p-2">
-                                <div class="text-left">{{ $cliente->direccion }}</div>
+                                <div class="text-left">{{ $cliente->email }}</div>
                             </td>
                             <td class="p-2">
                                 <div class="font-medium text-gray-800">{{ $cliente->cif }}</div>
