@@ -81,16 +81,16 @@
                         @foreach ($facturas as $factura)
                         <tr>
                             <td class="p-2">
-                                <div class="text-left font-medium text-green-500 uppercase">{{ $factura->numero }}</div>
+                                <div class="text-left font-medium text-green-500 uppercase"># {{ $factura->numero }}</div>
                             </td>
                             <td class="p-2">
-                                <div class="text-left">{{ $factura->fecha }}</div>
+                                <div class="text-left">{{ Carbon\Carbon::parse($factura->fecha)->format('d/m/Y') }}</div>
                             </td>
                             <td class="p-2">
-                                <div class="font-medium text-gray-800">{{ $factura->base_imponible }}</div>
+                                <div class="font-medium text-gray-800">{{ number_format($factura->base_imponible, 2, ',', '.') }} €</div>
                             </td>
                             <td class="p-2">
-                                <div class="font-medium text-gray-800">{{ $factura->importe_total }}</div>
+                                <div class="font-medium text-gray-800">{{ number_format($factura->importe_total, 2, ',', '.') }} €</div>
                             </td>
                             <td class="p-2">
 
